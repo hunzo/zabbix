@@ -5,7 +5,7 @@ docker run --name some-zabbix-proxy-sqlite3 -e ZBX_HOSTNAME=PROXY-01 -e ZBX_SERV
 ```
 ## Line webhook
 ### create line Messaging Api
-- Your user ID ex. `U8a80cc40b3209438ee1d0ed5b45de65d`
+- Your user ID ex. `U8a80cc40b32xxxxxx`
 - Channel access token ex. `UNr74ZHIYnqbf5GOSy+GTxLX2coF5HrdHE4qmr9f1Gw7Kc6wDprOiHPrtykieJOb3b3WB6wFi0tC`
 - setting Alerts > Media Types,  Line webhook , bot_token=Chanel access token, send_to=ling user ID, zabbix_url=http://x.x.x.x
 - setting Alerts > Actions > create action

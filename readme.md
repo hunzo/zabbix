@@ -1,7 +1,13 @@
 # Zabbix Install
 ## zabbix-proxy
 ```bash
-docker run --name some-zabbix-proxy-sqlite3 -e ZBX_HOSTNAME=PROXY-01 -e ZBX_SERVER_HOST=20.100.200.101 -d zabbix/zabbix-proxy-sqlite3:6.4.0-alpine
+docker run \
+    --name some-zabbix-proxy-sqlite3 \
+    --restart always \
+    -e ZBX_HOSTNAME=ZBX-PROXY-DMZ1 \
+    -e ZBX_SERVER_HOST=10.100.100.145 \
+    -d \
+    zabbix/zabbix-proxy-sqlite3:6.4.0-alpine
 ```
 ## Line webhook
 ### create line Messaging Api
@@ -20,5 +26,12 @@ docker run --name some-zabbix-proxy-sqlite3 -e ZBX_HOSTNAME=PROXY-01 -e ZBX_SERV
         RecoveryTime: {EVENT.RECOVERY.TIME}
         ```
 - Users > Users > Media (Line webhoook)
+## zabbix generate report
+- set fontend https://xxx.domain
+##
+```
+ZBX_TLSACCEPT=unencrypted
+ZBX_IGNOREURLCERTERRORS=0
+```
 
 

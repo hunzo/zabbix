@@ -34,4 +34,24 @@ ZBX_TLSACCEPT=unencrypted
 ZBX_IGNOREURLCERTERRORS=0
 ```
 
+# Change default docker network
+## create /etc/docker/daemon.json
+```json
+{
+    "default-address-pools": [
+        {
+            "base": "172.168.0.0/24",
+            "size": 24
+        }
+    ]
+}
+```
+## restart docker service
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+   
+
+
 
